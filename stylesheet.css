@@ -209,3 +209,87 @@ week{
 }
 
 ol{ padding-left:0; list-style-position:inside; }
+
+/* Responsive tweaks for Research Papers table only - preserves theme/colors */
+@media (max-width: 720px) {
+  .research-table,
+  .research-table tbody,
+  .research-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .research-table td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Make the paper number and content align naturally when stacked */
+  .research-table td[style*="width:1%"] {
+    padding-left: 6px !important;
+    padding-top: 6px !important;
+  }
+
+  papertitle { display: block; margin-bottom: 6px; }
+}
+
+/* Center header (name + image) on small screens, keep large-screen layout unchanged */
+@media (max-width: 720px) {
+  .intro-table,
+  .intro-table tbody,
+  .intro-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .intro-table td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+    text-align: center;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .intro-table td img {
+    display: block !important;
+    margin: 12px auto !important;
+    width: 140px !important;
+    max-width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+  }
+
+  .intro-table td a img,
+  .intro-table td .hoverZoomLink img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 140px !important;
+    max-width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+  }
+
+  /* Ensure the anchor wrapping the avatar centers and doesn't push left */
+  .intro-table td > a {
+    display: inline-block !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Specific fallback if image has the hoverZoomLink class on the img itself */
+  .intro-table td > img.hoverZoomLink {
+    display: block !important;
+    margin: 12px auto !important;
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+  }
+
+  /* Reduce the large name bottom padding on small screens */
+  name { padding-bottom: 20px; }
+}
